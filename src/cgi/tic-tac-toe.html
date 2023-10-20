@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Tic Tac Toe</title>
+        <style>
+                * {
+        font-family: monospace;
+}
+
+body{
+        padding: 0;
+        margin: 0;        
+}
+
+.container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+}
+form{
+        display: flex;
+        flex-direction: column;
+}
+
+table, tr, td{
+        width: 500px;
+        border-collapse: collapse;
+        border: 1px solid;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+td {
+        border-radius: 100%;
+        background-color: brown;
+        padding: 50px;
+}
+div>h1{
+        text-align: center;
+}
+        </style>
+</head>
+<body>
+        <header>
+                <div>
+                        <h1>Tic Tac Toe</h1>
+                </div>
+        </header>
+        <div class="container">
+                <div class="user">
+                        <form action="cgi-bin/get_info.cgi" method="get">
+                                <input type="hidden" name ="player"value="1">
+                                <input type="number" name="row" id="row" required>
+                                <input type="number" name="column" id="column" required>
+                                <input type="submit" value="Ok">
+                        </form>
+                </div>
+                <div class="table">
+                        <table>
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                </tr>
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                </tr>
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                </tr>
+                        </table>
+                </div>
+                <div class="user">
+                        <form action="cgi-bin/get_info.cgi" method="get">
+                                <input type="hidden" name ="player"value="2">
+                                <input type="number" name="row" id="row" required>
+                                <input type="number" name="column" id="column" required>
+                                <input type="submit" value="Ok">
+                        </form>
+                </div>
+        </div>
+</body>
+</html>

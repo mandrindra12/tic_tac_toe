@@ -1,0 +1,35 @@
+* {
+        font-family: monospace;
+}
+
+body{
+        padding: 0;
+        margin: 0;        
+}
+
+.container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+}
+form{
+        display: flex;
+        flex-direction: column;
+}
+
+table, tr, td{
+        width: 500px;
+        border-collapse: collapse;
+        border: 1px solid;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+td {
+        border-radius: 100%;
+        background-color: brown;
+        padding: 50px;
+}
+div>h1{
+        text-align: center;
+}
