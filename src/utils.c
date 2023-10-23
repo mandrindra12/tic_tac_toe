@@ -4,8 +4,8 @@
 #include <ctype.h>
 
 
-bool is_invalid(int row, int column) {
-	if(row>2 || row < 0 || column < 0 || column > isalpha(row) || isalpha(column)) {
+bool is_invalid(char row, char column) {
+	if(row-'0'>2 || row-'0' < 0 || column-'0' < 0 || column-'0' >2 || isalpha(row) || isalpha(column)) {
  		printf("INVALID INPUT row<2 or row > 0 or column > 0 or column < 2\n\a");
 		return true;
 	}
@@ -81,18 +81,19 @@ void setTable(char **table, int **boolTable, int i, int j, int player) {
 	else if(boolTable[i][j] == 1 && player%2 != 0)
 		table[i][j]='o';
 }
-
+int char_to_int(char c){
+	return c-'0';
+}
 void input(int **boolTable, int *i, int *j, int *player) {
-	int line=0, column=0, r = 0;
+	char line=0, column=0;
 	do{
-		c:
 		printf("ROW, COLUMN: ");
-		r = scanf(" %d %d", &line, &column);
-		if(r!=2) goto c;
-	}while(r!=2 || is_invalid(line,column) || !is_empty(boolTable, line, column));
+		scanf(" %c %c", &line, &column);
+	}while(is_invalid(line, column) || !is_empty(boolTable, char_to_int(line), char_to_int(column)));
 	*(player)+=1;
-	*i=line;*j=column;
-	boolTable[line][column] = 1;
+	*i=char_to_int(line);
+	*j=char_to_int(column);
+	boolTable[char_to_int(line)][char_to_int(column)] = 1;
 }
 void displayTable(char **table, int **boolTable, int li, int co) {
 	#ifdef _WINDOWS_
