@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 
 bool is_invalid(int row, int column) {
-	if(row>2 || row < 0 || column < 0 || column > 2) {
+	if(row>2 || row < 0 || column < 0 || column > isalpha(row) || isalpha(column)) {
  		printf("INVALID INPUT row<2 or row > 0 or column > 0 or column < 2\n\a");
 		return true;
 	}
@@ -12,7 +13,10 @@ bool is_invalid(int row, int column) {
 }
 bool is_empty(int **bool_table, int line, int column) {
 	if(bool_table[line][column] == 0) return true;
-	else return false;
+	else{
+		printf("Invalid Input\n");
+		return false;
+	}
 }
 
 bool game_over(char **table, int **boolTable) {
