@@ -4,7 +4,7 @@
 
 
 ##FOR WINDOWS USERS ADD `-D_WINDOWS_` when compiling with gcc
-#make sure that _WINDOWS_ is define when compiling
+##make sure that _WINDOWS_ is defined when compiling
 
 ##FOR GNU/LINUX
-#type `make`
+##type `make`
