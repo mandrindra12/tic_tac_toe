@@ -18,4 +18,4 @@ $(BIN): $(SRC)/*.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/$@ $^ -I $(INCLUDE)/ 
 
 clean:
-	rm -rf $(BINDIR)/* 
+	rm -rf $(BINDIR)/*
